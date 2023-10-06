@@ -27,12 +27,10 @@ return new class extends Migration
             $table->integer('plan');
             $table->integer('images');
             $table->timestamps();
-            $table->unsignedBigInteger('property_type_id');
-            $table->foreignId('property_types_id')
-                ->references('id')
-                ->on('property_types')
-                ->onDelete('restricted')
-                ->onUpdate('restricted');
+            $table->foreignId('property_type_id')
+                ->constrained()
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
         });
     }
