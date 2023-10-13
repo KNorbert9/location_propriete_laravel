@@ -15,15 +15,10 @@ return new class extends Migration
     {
         Schema::create('property_ameneties', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('property_id');
+            $table->unsignedBigInteger('ameneties_id');
+            // Ajoutez d'autres colonnes si nécessaire
             $table->timestamps();
-            $table->foreignId('ameneties_id')
-            ->constrained()
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-            $table->foreignId('property_id')
-            ->constrained()
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
         });
     }
 

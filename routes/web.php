@@ -2,9 +2,10 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
-use App\Http\Controllers\AmenetiesController;
+use App\Http\Controllers\Backend\AmenetiesController;
 use App\Http\Controllers\Backend\PropertyTypeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -72,6 +73,17 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/update/ameneties/{id}', 'UpdateAmeneties')->name('update.ameneties');
         Route::post('/update/ameneties/valide', 'UpdateValidAmeneties')->name('update.valid.ameneties');
         Route::get('/delete/ameneties/{id}', 'DeleteAmeneties')->name('delete.ameneties');
+    });
+
+
+    //Properties
+    Route::controller(PropertyController::class)->group(function () {
+        Route::get('/all/properties', 'allProperties')->name('all.properties');
+        Route::get('/add/properties', 'addProperties')->name('add.properties');
+        Route::post('/store/properties', 'StoreProperties')->name('store.properties');
+        Route::get('/update/properties/{id}', 'UpdateProperties')->name('update.properties');
+        Route::post('/update/properties/valid', 'UpdateValidProperties')->name('update.valid.properties');
+        Route::get('/delete/properties/{id}', 'DeleteProperties')->name('delete.properties');
     });
 });
 

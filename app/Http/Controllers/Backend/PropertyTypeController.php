@@ -55,7 +55,7 @@ class PropertyTypeController extends Controller
 
 
     //valider la modification
-    public function UpdateValidPropertyType(Request $request, ){
+    public function UpdateValidPropertyType(Request $request ){
 
         $pid = $request->id;
 

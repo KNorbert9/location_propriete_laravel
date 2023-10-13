@@ -106,7 +106,6 @@
                                     <img id="showImage" class="wd-80 rounded-circle"
                                         src="{{ !empty($profileData->photo) ? url('upload/admin_images/' . $profileData->photo) : url('upload/no_image.jpg') }}"
                                         alt="profile">
-
                                 </div>
 
                                 <button type="submit" class="btn btn-primary me-2">Sauvegarder</button>
