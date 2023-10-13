@@ -27,16 +27,17 @@ class PropertyController extends Controller
     public function StoreProperties(Request $request)
     {
 
-        // $request->validate([
-        //     'name' =>  'required',
-        //     'location' => 'required',
-        //     'area'=> 'required',
-        //     'beds'=> 'required',
-        //     'bath'=> 'required',
-        //     'garage'=> 'required',
-        //     'plan'=> 'required',
-        //     'property_type_id'=> 'required'
-        // ]);
+        $request->validate([
+            'name' =>  'required',
+            'location' => 'required',
+            'area'=> 'required',
+            'beds'=> 'required',
+            'baths'=> 'required',
+            'garage'=> 'required',
+            'plan'=> 'required',
+            'property_type_id'=> 'required',
+            'ameneties' => 'required'
+        ]);
 
         $data = new property();
 
@@ -61,7 +62,6 @@ class PropertyController extends Controller
         );
 
         return redirect()->route('all.properties')->with($notification);
-
     }
 
     public function UpdateProperties()

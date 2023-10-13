@@ -33,17 +33,40 @@
 
 
                                     <label for="exampleInputUsername1" class="form-label"> Emplacement</label>
-                                    <input type="text" class="form-control " name="location">
+                                    <input type="text" class="form-control " name="location" @error('old_password') is-invalid @enderror>
+                                    @error('location')
+                                      <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+
                                     <label for="exampleInputUsername1" class="form-label"> Area</label>
                                     <input type="text" class="form-control " name="area">
+                                    @error('area')
+                                      <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+
                                     <label for="exampleInputUsername1" class="form-label"> beds</label>
                                     <input type="number" class="form-control " name="beds">
+                                    @error('beds')
+                                      <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+
                                     <label for="exampleInputUsername1" class="form-label"> baths</label>
                                     <input type="number" class="form-control " name="baths">
+                                    @error('baths')
+                                      <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+
                                     <label for="exampleInputUsername1" class="form-label"> garage</label>
                                     <input type="number" class="form-control " name="garage">
+                                    @error('garage')
+                                      <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+
                                     <label for="exampleInputUsername1" class="form-label"> plan</label>
                                     <input type="text" class="form-control " name="plan">
+                                    @error('plan')
+                                      <span class="text-danger">{{ $message }}</span>
+                                    @enderror
 
 
                                     <div class="mb-3">
@@ -51,6 +74,9 @@
                                         <input type="file" class="form-control" id="images" name="images"
                                             autocomplete="off">
                                     </div>
+                                    @error('images')
+                                      <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                     {{-- <div class="mb-3">
                                         <label for="exempleInputEmail1" class="form-label"></label>
                                         <img id="showImage" class="wd-80 rounded-circle"
@@ -67,6 +93,9 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    @error('property_type_id')
+                                      <span class="text-danger">{{ $message }}</span>
+                                    @enderror
 
 
                                     <div>
@@ -82,6 +111,9 @@
                                         </div>
 
                                     </div>
+                                    @error('ameneties[]')
+                                      <span class="text-danger">{{ $message }}</span>
+                                    @enderror
 
 
                                 </div>
