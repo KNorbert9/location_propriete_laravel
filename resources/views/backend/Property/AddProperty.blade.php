@@ -22,67 +22,81 @@
 
 
                                 <div class="mb-3">
-                                    <label for="name" class="form-label"> Nom du type</label>
-                                    <input type="text" class="form-control @error('old_password') is-invalid @enderror"
-                                        name="name">
-                                    @error('name')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
 
-
-
-
-                                    <label for="exampleInputUsername1" class="form-label"> Emplacement</label>
-                                    <input type="text" class="form-control " name="location" @error('old_password') is-invalid @enderror>
-                                    @error('location')
-                                      <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-
-                                    <label for="exampleInputUsername1" class="form-label"> Area</label>
-                                    <input type="text" class="form-control " name="area">
-                                    @error('area')
-                                      <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-
-                                    <label for="exampleInputUsername1" class="form-label"> beds</label>
-                                    <input type="number" class="form-control " name="beds">
-                                    @error('beds')
-                                      <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-
-                                    <label for="exampleInputUsername1" class="form-label"> baths</label>
-                                    <input type="number" class="form-control " name="baths">
-                                    @error('baths')
-                                      <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-
-                                    <label for="exampleInputUsername1" class="form-label"> garage</label>
-                                    <input type="number" class="form-control " name="garage">
-                                    @error('garage')
-                                      <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-
-                                    <label for="exampleInputUsername1" class="form-label"> plan</label>
-                                    <input type="text" class="form-control " name="plan">
-                                    @error('plan')
-                                      <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-
-
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Photo</label>
-                                        <input type="file" class="form-control" id="images" name="images"
-                                            autocomplete="off">
+                                    <div>
+                                        <label for="name" class="form-label"> Nom du type</label>
+                                        <input type="text"
+                                            class="form-control @error('old_password') is-invalid @enderror" name="name">
+                                        @error('name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
-                                    @error('images')
-                                      <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                    {{-- <div class="mb-3">
-                                        <label for="exempleInputEmail1" class="form-label"></label>
-                                        <img id="showImage" class="wd-80 rounded-circle"
-                                            src="{{ !empty($profileData->photo) ? url('upload/admin_images/' . $profileData->photo) : url('upload/no_image.jpg') }}"
-                                            alt="profile">
-                                    </div> --}}
+
+                                    <div>
+                                        <label for="exampleInputUsername1" class="form-label"> Emplacement</label>
+                                        <input type="text" class="form-control " name="location"
+                                            @error('old_password') is-invalid @enderror>
+                                        @error('location')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div>
+                                        <label for="exampleInputUsername1" class="form-label"> Area</label>
+                                        <input type="text" class="form-control " name="area">
+                                        @error('area')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div>
+                                        <label for="exampleInputUsername1" class="form-label"> beds</label>
+                                        <input type="number" class="form-control " name="beds">
+                                        @error('beds')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div>
+                                        <label for="exampleInputUsername1" class="form-label"> baths</label>
+                                        <input type="number" class="form-control " name="baths">
+                                        @error('baths')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div>
+                                        <label for="exampleInputUsername1" class="form-label"> garage</label>
+                                        <input type="number" class="form-control " name="garage">
+                                        @error('garage')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div>
+                                        <label for="exampleInputUsername1" class="form-label"> plan</label>
+                                        <input type="text" class="form-control " name="plan">
+                                        @error('plan')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Photo</label>
+                                            <input type="file" class="form-control" id="images" name="images"
+                                                autocomplete="off">
+                                        </div>
+                                        @error('images')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                        {{-- <div class="mb-3">
+                                            <label for="exempleInputEmail1" class="form-label"></label>
+                                            <img id="showImage" class="wd-80 rounded-circle"
+                                                src="{{ !empty($profileData->photo) ? url('upload/admin_images/' . $profileData->photo) : url('upload/no_image.jpg') }}"
+                                                alt="profile">
+                                        </div> --}}
+                                    </div>
 
                                     <div>
                                         <label for="property_type_id">séléctionné le type de propriété</label>
@@ -92,13 +106,13 @@
                                                     {{ $propertyType->type_name }}</option>
                                             @endforeach
                                         </select>
+                                        @error('property_type_id')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
-                                    @error('property_type_id')
-                                      <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-
 
                                     <div>
+
                                         <label for="ameneties">Sélectionné les ameneties</label>
                                         <div>
                                             @foreach ($ameneties as $ameneties)
@@ -108,12 +122,13 @@
                                                     {{ $ameneties->amenety_name }}
                                                 </label>
                                             @endforeach
+                                            @error('ameneties[]')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
 
                                     </div>
-                                    @error('ameneties[]')
-                                      <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+
 
 
                                 </div>

@@ -13,7 +13,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <h6 class="card-title"> Ajouter nouveau type de propriété </h6>
+                            <h6 class="card-title"> Mettre à jour une type de propriété </h6>
 
                             <form method="POST" action="{{ route('update.valid.property.type') }}" class="forms-sample"
                                 enctype="multipart/form-data">
@@ -28,8 +28,8 @@
                                     @error('type_name')
                                       <span class="text-danger">{{ $message }}</span>
                                     @enderror
-
                                 </div>
+
                                 <div class="mb-3">
                                     <label for="exampleInputUsername1" class="form-label"> Type de icon </label>
                                     <input type="text" class="form-control @error('type_icon') is-invalid @enderror"

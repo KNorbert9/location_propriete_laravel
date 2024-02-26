@@ -30,12 +30,12 @@ class PropertyController extends Controller
         $request->validate([
             'name' =>  'required',
             'location' => 'required',
-            'area'=> 'required',
-            'beds'=> 'required',
-            'baths'=> 'required',
-            'garage'=> 'required',
-            'plan'=> 'required',
-            'property_type_id'=> 'required',
+            'area' => 'required',
+            'beds' => 'required',
+            'baths' => 'required',
+            'garage' => 'required',
+            'plan' => 'required',
+            'property_type_id' => 'required',
             'ameneties' => 'required'
         ]);
 
@@ -64,15 +64,46 @@ class PropertyController extends Controller
         return redirect()->route('all.properties')->with($notification);
     }
 
-    public function UpdateProperties()
+    public function UpdateProperties($id)
     {
+        $property = property::with('propertyType', 'ameneties')->findOrFail($id);
+        $propertyType = PropertyType::all();
+        $ameneties = Ameneties::all();
+
+        return view('backend.Property.UpdateProperty', compact('property', 'propertyType', 'ameneties'));
     }
 
-    public function UpdateValidProperties()
+    public function UpdateValidProperties(Request $request, $id)
     {
+        $property = property::findOrFail($id);
+
+        $property->name = $request->name;
+        $property->location = $request->location;
+        $property->area = $request->area;
+        $property->beds = $request->beds;
+        $property->baths = $request->baths;
+        $property->garage = $request->garage;
+        $property->plan = $request->plan;
+        $property->images = $request->images;
+        $property->property_type_id = $request->property_type_id;
+
+        $property->ameneties()->sync($request->input('ameneties', []));
     }
 
-    public function DeleteProperties()
+    public function DeleteProperties($id)
     {
+        $property = property::findOrFail($id);
+
+        $property->ameneties()->detach();
+
+        $property->delete();
+
+
+        $notification = array(
+            'message' => 'Suppression réalisé avec succèes',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.properties')->with($notification);
     }
 }

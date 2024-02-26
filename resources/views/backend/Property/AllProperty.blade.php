@@ -55,9 +55,9 @@
                                                 @endforeach
                                             </td>
                                             <td>
-                                                <a href="{{ route('update.ameneties', $item->id) }}"
+                                                <a href="{{ route('update.properties', $item->id) }}"
                                                     class="btn btn-inverse-warning"> Edit </a>
-                                                <a href="{{ route('delete.ameneties', $item->id) }}"
+                                                <a href="{{ route('delete.properties', $item->id) }}"
                                                     class="btn btn-inverse-danger" id="delete"> Delete </a>
                                             </td>
 
